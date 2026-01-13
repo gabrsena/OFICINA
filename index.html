@@ -3,22 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oficina Mecânica em Sorocaba | Diagnóstico Rápido na Zona Norte e Itavuvu</title>
-    <meta name="description" content="Diagnóstico Preciso e Solução Rápida para seu Veículo em Sorocaba. Especialistas em injeção eletrônica, freios, suspensão e revisão preventiva na Itavuvu.">
+    <title>Oficina Mecânica Sorocaba | Diagnóstico Rápido e Preciso</title>
+    <meta name="description" content="Diagnóstico Preciso e Solução Rápida para seu Veículo em Sorocaba. Especialistas em injeção eletrônica, freios e suspensão na Zona Norte.">
     
-    <!-- Fonts: Sora -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.imgur.com/s6fkqNo.png">
+
+    <!-- Fonts: Sora (800 para títulos retos e fortes) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               background: '#09090b',
-              industrial: '#f97316', // Laranja Industrial
+              industrial: '#f97316',
               zinc: {
                 950: '#09090b',
                 900: '#18181b',
@@ -41,21 +49,15 @@
         color: #ffffff;
         -webkit-font-smoothing: antialiased;
       }
-      .glass {
-        background: rgba(9, 9, 11, 0.85);
-        backdrop-filter: blur(12px);
-      }
       .font-800 { font-weight: 800; }
       .tracking-tight-industrial { letter-spacing: -0.04em; }
       
-      /* Subtle glow for tech elements */
+      /* Efeitos de Brilho Industrial */
       .glow-industrial {
         filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
       }
-
-      /* Intense glow for high-conversion elements */
       .glow-intense {
-        filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.7));
+        filter: drop-shadow(0 0 25px rgba(249, 115, 22, 0.8));
       }
       
       .btn-industrial {
@@ -68,7 +70,7 @@
         transform: scale(1.02);
       }
       
-      /* Pulse Animation */
+      /* Animação de Pulso */
       .pulse-industrial {
         animation: pulse-orange 2s infinite;
       }
@@ -77,20 +79,261 @@
         70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
         100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
       }
-    </style>
 
-    <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      /* Navbar Transition */
+      #navbar { transition: all 0.3s ease; }
+      #navbar.scrolled {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        background: rgba(9, 9, 11, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(39, 39, 42, 0.5);
       }
-    }
-    </script>
+
+      /* Vidro */
+      .glass {
+        background: rgba(9, 9, 11, 0.85);
+        backdrop-filter: blur(12px);
+      }
+
+      /* Utilitários de Texto */
+      .straight-text { font-style: normal; }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
+  <body class="min-h-screen font-sans selection:bg-industrial selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-5">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="wrench" class="text-industrial glow-industrial w-6 h-6"></i>
+          <span class="text-lg font-800 tracking-tight-industrial text-white uppercase straight-text">Mecânica Sorocaba</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#inicio" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Início</a>
+          <a href="#servicos" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Serviços</a>
+          <a href="#local" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Localização</a>
+          <a href="https://wa.me/5511973759325?text=Olá,%20preciso%20de%20um%20orçamento%20para%20meu%20carro%20em%20Sorocaba." class="btn-industrial px-6 py-2 rounded-sm text-xs font-800 uppercase tracking-wider shadow-lg shadow-industrial/20">
+            Orçamento Rápido
+          </a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-white">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass border-b border-zinc-800 p-8 flex flex-col space-y-6">
+        <a href="#inicio" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Início</a>
+        <a href="#servicos" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Serviços</a>
+        <a href="#local" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Localização</a>
+        <a href="https://wa.me/5511973759325?text=Olá,%20preciso%20de%20um%20orçamento%20para%20meu%20carro%20em%20Sorocaba." class="btn-industrial py-4 rounded-sm text-center font-800 uppercase tracking-widest text-sm">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-56 md:pb-40 bg-zinc-950 overflow-hidden">
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#f97316_0,transparent_50%)] opacity-20"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <div class="inline-flex items-center space-x-2 bg-industrial/10 border border-industrial/20 px-4 py-1.5 rounded-sm mb-10">
+          <i data-lucide="zap" class="text-industrial w-4 h-4"></i>
+          <span class="text-[10px] font-800 text-industrial tracking-[0.2em] uppercase straight-text">A arquitetura da sua melhor versão</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-7xl font-800 text-white tracking-tight-industrial mb-8 leading-[1.1] uppercase max-w-5xl mx-auto straight-text">
+          DIAGNÓSTICO PRECISO E <br><span class="text-industrial">SOLUÇÃO RÁPIDA</span> PARA SEU VEÍCULO.
+        </h1>
+        
+        <p class="text-lg md:text-xl text-zinc-400 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+          Tecnologia de ponta e scanner de última geração em Sorocaba. O cuidado que seu carro merece, na velocidade que você precisa.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <a href="https://wa.me/5511973759325?text=Olá,%20preciso%20de%20um%20orçamento%20para%20meu%20carro%20em%20Sorocaba." class="w-full md:w-auto btn-industrial px-12 py-5 rounded-sm text-base font-800 uppercase tracking-widest flex items-center justify-center shadow-xl shadow-industrial/30">
+            Falar com o Mecânico Agora
+            <i data-lucide="arrow-right" class="ml-3 w-5 h-5"></i>
+          </a>
+          <div class="flex items-center space-x-3 text-zinc-500 font-bold text-xs uppercase tracking-widest">
+            <i data-lucide="check-circle-2" class="text-industrial w-4 h-4"></i>
+            <span>Orçamento em minutos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Brands -->
+    <div class="py-10 bg-zinc-900 border-y border-zinc-800/50">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 opacity-40">
+          <span class="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em]">Especialistas:</span>
+          <div class="flex flex-wrap justify-center gap-10 md:gap-16">
+            <span class="text-xl font-800 tracking-tighter text-white uppercase">VOLKSWAGEN</span>
+            <span class="text-xl font-800 tracking-tighter text-white uppercase">CHEVROLET</span>
+            <span class="text-xl font-800 tracking-tighter text-white uppercase">FIAT</span>
+            <span class="text-xl font-800 tracking-tighter text-white uppercase">TOYOTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <section id="servicos" class="py-24 bg-zinc-950">
+      <div class="container mx-auto px-6">
+        <div class="mb-16 md:mb-20">
+          <h2 class="text-3xl md:text-5xl font-800 text-white tracking-tight-industrial uppercase mb-6 flex items-center gap-4 straight-text">
+            <div class="w-12 h-1 bg-industrial rounded-sm"></div>
+            Serviços Urgentes
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm group hover:border-industrial transition-all duration-300">
+            <div class="w-12 h-12 bg-zinc-800 rounded-sm flex items-center justify-center mb-6 text-industrial group-hover:bg-industrial group-hover:text-white transition-colors glow-industrial">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-800 text-white mb-2 tracking-tight uppercase leading-tight straight-text">Injeção Eletrônica</h3>
+            <p class="text-zinc-500 font-medium text-xs uppercase tracking-wider">Luz no Painel / Falhas</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm group hover:border-industrial transition-all duration-300">
+            <div class="w-12 h-12 bg-zinc-800 rounded-sm flex items-center justify-center mb-6 text-industrial group-hover:bg-industrial group-hover:text-white transition-colors glow-industrial">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-800 text-white mb-2 tracking-tight uppercase leading-tight straight-text">Freios e Segurança</h3>
+            <p class="text-zinc-500 font-medium text-xs uppercase tracking-wider">ABS / Pastilhas / Discos</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm group hover:border-industrial transition-all duration-300">
+            <div class="w-12 h-12 bg-zinc-800 rounded-sm flex items-center justify-center mb-6 text-industrial group-hover:bg-industrial group-hover:text-white transition-colors glow-industrial">
+              <i data-lucide="gauge" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-800 text-white mb-2 tracking-tight uppercase leading-tight straight-text">Suspensão</h3>
+            <p class="text-zinc-500 font-medium text-xs uppercase tracking-wider">Amortecedores / Estabilidade</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm group hover:border-industrial transition-all duration-300">
+            <div class="w-12 h-12 bg-zinc-800 rounded-sm flex items-center justify-center mb-6 text-industrial group-hover:bg-industrial group-hover:text-white transition-colors glow-industrial">
+              <i data-lucide="clock" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-800 text-white mb-2 tracking-tight uppercase leading-tight straight-text">Revisão Preventiva</h3>
+            <p class="text-zinc-500 font-medium text-xs uppercase tracking-wider">Óleo / Filtros / Correias</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="local" class="py-24 bg-zinc-950 border-t border-zinc-900">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-end mb-16">
+          <div>
+            <h2 class="text-3xl md:text-5xl font-800 text-white tracking-tight-industrial uppercase mb-6 straight-text">
+              Sua Oficina na <span class="text-industrial">Zona Norte</span> de Sorocaba.
+            </h2>
+            <p class="text-zinc-400 font-medium text-lg max-w-xl">
+              Localizados na Av. Itavuvu para atender você com facilidade e transparência.
+            </p>
+          </div>
+          <div class="flex flex-col md:items-end gap-4">
+            <div class="flex items-center space-x-3 text-zinc-400">
+              <i data-lucide="map-pin" class="text-industrial w-5 h-5"></i>
+              <span class="font-bold uppercase tracking-widest text-xs">Av. Itavuvu, 2500 - Sorocaba/SP</span>
+            </div>
+            <div class="flex items-center space-x-3 text-zinc-400">
+              <i data-lucide="clock" class="text-industrial w-5 h-5"></i>
+              <span class="font-bold uppercase tracking-widest text-xs">Seg a Sex: 08h-18h | Sáb: 08h-12h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maps Embed -->
+        <div class="bg-zinc-900 border border-zinc-800 p-1 rounded-sm overflow-hidden shadow-2xl shadow-industrial/10">
+          <div class="w-full h-[350px] md:h-[500px] relative">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1!1s0x94c5f49e7b95f49d%3A0x7026f36de04!2zQXYuIEl0YXZ1dnUsIFNvcm9jYWJhIC0gU1A!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+              class="absolute inset-0 w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização Mecânica Sorocaba">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-zinc-950 border-t border-zinc-900">
+      <div class="container mx-auto px-6 text-center md:text-left">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div class="flex items-center space-x-3">
+            <i data-lucide="wrench" class="text-industrial w-6 h-6"></i>
+            <span class="text-white font-800 text-lg tracking-tight-industrial uppercase straight-text">Mecânica Sorocaba</span>
+          </div>
+          <p class="text-zinc-500 font-bold text-[10px] uppercase tracking-[0.3em] leading-loose">
+            © 2024 MECÂNICA SOROCABA PERFORMANCE. <br />
+            ZONA NORTE / ITAVUVU / CAMPOLIM / ÉDEN.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a id="floating-whatsapp"
+      href="https://wa.me/5511973759325?text=Olá,%20preciso%20de%20um%20orçamento%20para%20meu%20carro%20em%20Sorocaba."
+      class="fixed bottom-8 right-8 w-20 h-20 bg-industrial/70 backdrop-blur-md text-white rounded-sm flex items-center justify-center shadow-2xl z-50 pulse-industrial opacity-0 translate-y-10 scale-50 pointer-events-none transition-all duration-500 hover:bg-industrial hover:bg-opacity-90 glow-intense"
+      aria-label="Agendar via WhatsApp">
+      <i data-lucide="message-circle" class="w-10 h-10"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Navbar Scroll Logic
+      const navbar = document.getElementById('navbar');
+      const floatingWA = document.getElementById('floating-whatsapp');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+
+        // Show floating button after hero section
+        if (window.scrollY > 400) {
+          floatingWA.classList.remove('opacity-0', 'translate-y-10', 'scale-50', 'pointer-events-none');
+          floatingWA.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+        } else {
+          floatingWA.classList.add('opacity-0', 'translate-y-10', 'scale-50', 'pointer-events-none');
+          floatingWA.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+        }
+      });
+
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    </script>
   </body>
 </html>
