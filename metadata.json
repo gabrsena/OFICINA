@@ -1,0 +1,7 @@
+{
+  "name": "Oficina Mecânica Sorocaba | Diagnóstico Rápido na Zona Norte",
+  "description": "Diagnóstico preciso e solução rápida para seu veículo em Sorocaba. Especialistas em injeção eletrônica, freios e suspensão com tecnologia de ponta.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

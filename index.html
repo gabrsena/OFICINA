@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oficina Mecânica em Sorocaba | Diagnóstico Rápido na Zona Norte e Itavuvu</title>
+    <meta name="description" content="Diagnóstico Preciso e Solução Rápida para seu Veículo em Sorocaba. Especialistas em injeção eletrônica, freios, suspensão e revisão preventiva na Itavuvu.">
+    
+    <!-- Fonts: Sora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: '#09090b',
+              industrial: '#f97316', // Laranja Industrial
+              zinc: {
+                950: '#09090b',
+                900: '#18181b',
+                800: '#27272a',
+                700: '#3f3f46',
+                400: '#a1a1aa',
+              }
+            },
+            fontFamily: {
+              sans: ['Sora', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      body {
+        background-color: #09090b;
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+      }
+      .glass {
+        background: rgba(9, 9, 11, 0.85);
+        backdrop-filter: blur(12px);
+      }
+      .font-800 { font-weight: 800; }
+      .tracking-tight-industrial { letter-spacing: -0.04em; }
+      
+      /* Subtle glow for tech elements */
+      .glow-industrial {
+        filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.3));
+      }
+
+      /* Intense glow for high-conversion elements */
+      .glow-intense {
+        filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.7));
+      }
+      
+      .btn-industrial {
+        background-color: #f97316;
+        color: #ffffff;
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-industrial:hover {
+        background-color: #ea580c;
+        transform: scale(1.02);
+      }
+      
+      /* Pulse Animation */
+      .pulse-industrial {
+        animation: pulse-orange 2s infinite;
+      }
+      @keyframes pulse-orange {
+        0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+        70% { box-shadow: 0 0 0 15px rgba(249, 115, 22, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+      }
+    </style>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
