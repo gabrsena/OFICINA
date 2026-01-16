@@ -113,6 +113,7 @@
         <div class="hidden md:flex items-center space-x-8">
           <a href="#inicio" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Início</a>
           <a href="#servicos" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Serviços</a>
+          <a href="#depoimentos" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Depoimentos</a>
           <a href="#local" class="text-zinc-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Localização</a>
           <a href="https://wa.me/5511973759325?text=Olá,%20preciso%20de%20um%20orçamento%20para%20meu%20carro%20em%20Sorocaba." class="btn-industrial px-6 py-2 rounded-sm text-xs font-800 uppercase tracking-wider shadow-lg shadow-industrial/20">
             Orçamento Rápido
@@ -128,6 +129,7 @@
       <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass border-b border-zinc-800 p-8 flex flex-col space-y-6">
         <a href="#inicio" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Início</a>
         <a href="#servicos" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Serviços</a>
+        <a href="#depoimentos" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Depoimentos</a>
         <a href="#local" class="text-white text-lg font-bold uppercase tracking-tight mobile-link">Localização</a>
         <a href="https://wa.me/5511973759325?text=Olá,%20preciso%20de%20um%20orçamento%20para%20meu%20carro%20em%20Sorocaba." class="btn-industrial py-4 rounded-sm text-center font-800 uppercase tracking-widest text-sm">
           Falar no WhatsApp
@@ -137,21 +139,26 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="relative pt-32 pb-20 md:pt-56 md:pb-40 bg-zinc-950 overflow-hidden">
-      <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://i.imgur.com/tPaT9su.png" alt="Oficina Mecânica Fundo" class="w-full h-full object-cover opacity-25">
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-zinc-950/40"></div>
+      </div>
+
+      <!-- Glow Effect -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#f97316_0,transparent_50%)] opacity-20"></div>
       </div>
 
       <div class="container mx-auto px-6 relative z-10 text-center">
-        <div class="inline-flex items-center space-x-2 bg-industrial/10 border border-industrial/20 px-4 py-1.5 rounded-sm mb-10">
-          <i data-lucide="zap" class="text-industrial w-4 h-4"></i>
-          <span class="text-[10px] font-800 text-industrial tracking-[0.2em] uppercase straight-text">A arquitetura da sua melhor versão</span>
-        </div>
+        <!-- Badge Removed -->
         
-        <h1 class="text-4xl md:text-7xl font-800 text-white tracking-tight-industrial mb-8 leading-[1.1] uppercase max-w-5xl mx-auto straight-text">
+        <h1 class="text-4xl md:text-7xl font-800 text-white tracking-tight-industrial mb-8 leading-[1.1] uppercase max-w-5xl mx-auto straight-text drop-shadow-2xl">
           DIAGNÓSTICO PRECISO E <br><span class="text-industrial">SOLUÇÃO RÁPIDA</span> PARA SEU VEÍCULO.
         </h1>
         
-        <p class="text-lg md:text-xl text-zinc-400 font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-lg md:text-xl text-zinc-300 font-medium mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
           Tecnologia de ponta e scanner de última geração em Sorocaba. O cuidado que seu carro merece, na velocidade que você precisa.
         </p>
         
@@ -160,7 +167,7 @@
             Falar com o Mecânico Agora
             <i data-lucide="arrow-right" class="ml-3 w-5 h-5"></i>
           </a>
-          <div class="flex items-center space-x-3 text-zinc-500 font-bold text-xs uppercase tracking-widest">
+          <div class="flex items-center space-x-3 text-zinc-400 font-bold text-xs uppercase tracking-widest drop-shadow-md">
             <i data-lucide="check-circle-2" class="text-industrial w-4 h-4"></i>
             <span>Orçamento em minutos</span>
           </div>
@@ -225,6 +232,82 @@
             </div>
             <h3 class="text-lg font-800 text-white mb-2 tracking-tight uppercase leading-tight straight-text">Revisão Preventiva</h3>
             <p class="text-zinc-500 font-medium text-xs uppercase tracking-wider">Óleo / Filtros / Correias</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-24 bg-zinc-900 border-t border-zinc-800">
+      <div class="container mx-auto px-6">
+        <div class="mb-16 md:mb-20 text-center">
+          <h2 class="text-3xl md:text-5xl font-800 text-white tracking-tight-industrial uppercase mb-6 straight-text">
+            O que dizem <span class="text-industrial">nossos clientes</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-zinc-950 p-8 rounded-sm border border-zinc-800 hover:border-industrial transition-all duration-300 group">
+            <div class="flex space-x-1 text-industrial mb-6">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-zinc-400 font-medium mb-6 leading-relaxed">"Profissionais de extrema confiança. Resolveram o problema da injeção do meu carro que ninguém achava. Recomendo demais!"</p>
+            <div class="flex items-center space-x-4">
+              <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-white font-bold text-xs uppercase">
+                JP
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm uppercase tracking-wide">João Paulo</p>
+                <p class="text-zinc-500 text-xs uppercase tracking-wider">Sorocaba, SP</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-zinc-950 p-8 rounded-sm border border-zinc-800 hover:border-industrial transition-all duration-300 group">
+            <div class="flex space-x-1 text-industrial mb-6">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-zinc-400 font-medium mb-6 leading-relaxed">"Atendimento rápido e transparente. Me explicaram tudo o que precisava ser feito na suspensão. O carro ficou zero."</p>
+            <div class="flex items-center space-x-4">
+              <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-white font-bold text-xs uppercase">
+                MS
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm uppercase tracking-wide">Maria Silva</p>
+                <p class="text-zinc-500 text-xs uppercase tracking-wider">Zona Norte</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-zinc-950 p-8 rounded-sm border border-zinc-800 hover:border-industrial transition-all duration-300 group">
+            <div class="flex space-x-1 text-industrial mb-6">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-zinc-400 font-medium mb-6 leading-relaxed">"Preço justo e qualidade impecável. Fiz a revisão completa antes de viajar e o carro se comportou perfeitamente."</p>
+            <div class="flex items-center space-x-4">
+              <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center text-white font-bold text-xs uppercase">
+                RA
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm uppercase tracking-wide">Rafael Alves</p>
+                <p class="text-zinc-500 text-xs uppercase tracking-wider">Éden</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
