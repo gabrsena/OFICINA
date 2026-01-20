@@ -98,6 +98,18 @@
 
       /* Utilitários de Texto */
       .straight-text { font-style: normal; }
+
+      /* Animação de Marquee (Infinito) */
+      @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 30s linear infinite;
+      }
+      /* Removida a pausa no hover conforme solicitado */
     </style>
   </head>
   <body class="min-h-screen font-sans selection:bg-industrial selection:text-white overflow-x-hidden">
@@ -175,17 +187,33 @@
       </div>
     </section>
 
-    <!-- Trust Brands -->
-    <div class="py-10 bg-zinc-900 border-y border-zinc-800/50">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 opacity-40">
-          <span class="text-sm font-bold text-zinc-400 uppercase tracking-[0.3em]">Especialistas:</span>
-          <div class="flex flex-wrap justify-center gap-10 md:gap-16">
-            <span class="text-xl font-800 tracking-tighter text-white uppercase">VOLKSWAGEN</span>
-            <span class="text-xl font-800 tracking-tighter text-white uppercase">CHEVROLET</span>
-            <span class="text-xl font-800 tracking-tighter text-white uppercase">FIAT</span>
-            <span class="text-xl font-800 tracking-tighter text-white uppercase">TOYOTA</span>
-          </div>
+    <!-- Trust Brands with Marquee Animation -->
+    <div class="py-10 bg-zinc-900 border-y border-zinc-800/50 overflow-hidden group">
+      <!-- Texto 'Especialistas Multimarcas' removido conforme solicitado -->
+      <div class="relative flex overflow-x-hidden">
+        <div class="animate-marquee whitespace-nowrap flex items-center py-2">
+          <!-- First Set of Brands -->
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">VOLKSWAGEN</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">CHEVROLET</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">FIAT</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">TOYOTA</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">HONDA</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">HYUNDAI</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">RENAULT</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">JEEP</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">NISSAN</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">FORD</span>
+          <!-- Duplicate Set for Continuous Loop -->
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">VOLKSWAGEN</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">CHEVROLET</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">FIAT</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">TOYOTA</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">HONDA</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">HYUNDAI</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">RENAULT</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">JEEP</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">NISSAN</span>
+          <span class="text-2xl font-800 tracking-tighter text-white/40 uppercase mx-12 hover:text-industrial transition-colors">FORD</span>
         </div>
       </div>
     </div>
