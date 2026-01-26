@@ -1,6 +1,6 @@
 {
-  "name": "Oficina Mecânica Sorocaba | Diagnóstico Rápido na Zona Norte",
-  "description": "Diagnóstico preciso e solução rápida para seu veículo em Sorocaba. Especialistas em injeção eletrônica, freios e suspensão com tecnologia de ponta.",
+  "name": "Auto Center | Especialista em Mecânica em Sorocaba",
+  "description": "Referência em Sorocaba para injeção eletrônica, freios e suspensão. Tecnologia avançada e diagnóstico preciso na Zona Norte.",
   "requestFramePermissions": [
     "geolocation"
   ]
